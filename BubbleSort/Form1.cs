@@ -33,7 +33,12 @@ namespace BubbleSort
                 Random rnd = new Random();
                 list.Add(rnd.Next(1, 1000));
             }
-            textBox2.Text = list.ToString();
+            
+            /*
+            for (int i = 0; i < list.Max(); i++)
+            {
+                textBox2.Text = list[i].ToString();
+            } */
         }
     }
 }
