@@ -34,17 +34,17 @@ namespace BubbleSort
                 for (int i = 0; i < anzahl; i++)
                 {
                     Random rnd = new Random();
-                    int curValue = rnd.Next(1, 1000);
+                    int curValue = rnd.Next(1, 10000);
                     while (list.Contains(curValue))
                     {
-                        curValue = rnd.Next(1, 1000);
+                        curValue = rnd.Next(1, 10000);
                     }
                     list.Add(curValue);
                 }
                 listBox1.DataSource = list;
             } else if (textBox1.Text == "") {
                 MessageBox.Show("Please don't leave the Textbox empty.", "An error occured...");
-            }
+            } 
 
             /*foreach (var all in list)
             {
