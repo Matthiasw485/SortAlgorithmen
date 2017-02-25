@@ -32,14 +32,14 @@
             this.button2 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(12, 227);
+            this.button1.Location = new System.Drawing.Point(208, 227);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(372, 23);
+            this.button1.Size = new System.Drawing.Size(176, 23);
             this.button1.TabIndex = 0;
             this.button1.Text = "Sortieren";
             this.button1.UseVisualStyleBackColor = true;
@@ -70,25 +70,29 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Anzahl (Zahlen)";
             // 
-            // textBox2
+            // listBox1
             // 
-            this.textBox2.Location = new System.Drawing.Point(12, 93);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(292, 121);
-            this.textBox2.TabIndex = 4;
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(12, 93);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(372, 121);
+            this.listBox1.TabIndex = 5;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(396, 262);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sortier Algorithmen";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
@@ -102,7 +106,7 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.ListBox listBox1;
     }
 }
 

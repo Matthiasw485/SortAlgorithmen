@@ -26,18 +26,31 @@ namespace BubbleSort
         private void button2_Click(object sender, EventArgs e)
         {
             list.Clear();
-            int anzahl = Int32.Parse(textBox1.Text);
+            listBox1.DataSource = null;
 
-            for (int i = 0; i < anzahl; i++)
+            if (textBox1.Text != "")
             {
-                Random rnd = new Random();
-                list.Add(rnd.Next(1, 1000));
-            }
-            foreach (var all in list)
+                int anzahl = Int32.Parse(textBox1.Text);
+                for (int i = 0; i < anzahl; i++)
+                {
+                    Random rnd = new Random();
+                    int curValue = rnd.Next(1, 10000);
+                    while (list.Contains(curValue))
+                    {
+                        curValue = rnd.Next(1, 10000);
+                    }
+                    list.Add(curValue);
+                }
+                listBox1.DataSource = list;
+            } else if (textBox1.Text == "") {
+                MessageBox.Show("Please don't leave the Textbox empty.", "An error occured...");
+            } 
+
+            /*foreach (var all in list)
             {
                 textBox2.Text = all.ToString();
             }
-
+            */
             /*
             for (int i = 0; i < list.Max(); i++)
             {
