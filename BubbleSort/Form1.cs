@@ -7,12 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Diagnostics;
 namespace BubbleSort
 {
     public partial class Form1 : Form
     {
         List<int> list = new List<int>();
+        Stopwatch watch = new Stopwatch();
         public Form1()
         {
             InitializeComponent();
@@ -34,10 +35,10 @@ namespace BubbleSort
                 for (int i = 0; i < anzahl; i++)
                 {
                     Random rnd = new Random();
-                    int curValue = rnd.Next(1, 10000);
+                    int curValue = rnd.Next(1, 100000);
                     while (list.Contains(curValue))
                     {
-                        curValue = rnd.Next(1, 10000);
+                        curValue = rnd.Next(1, 100000);
                     }
                     list.Add(curValue);
                 }
@@ -57,5 +58,48 @@ namespace BubbleSort
                 textBox2.Text = list[i].ToString();
             } */
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            bool PaarSortiert;
+            int sizeOfList = list.Count;
+
+            watch.Start();
+            do
+            {
+                PaarSortiert = true;
+
+                for (int i = 0; i < sizeOfList - 1; i++)
+                {
+                    if (list[i] > list[i + 1])
+                    {
+
+                        int temp = list[i];
+                        list[i] = list[i + 1];
+                        list[i + 1] = temp;
+
+                        PaarSortiert = false;
+                    }
+                }
+
+            } while (!PaarSortiert);
+            watch.Stop();
+            label2.Text = "Zeit: " + watch.Elapsed;
+            watch.Reset();
+            listBox1.DataSource = null;
+            listBox1.DataSource = list;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            watch.Start();
+            listBox1.DataSource = null;
+            list.Sort();
+            listBox1.DataSource = list;
+            watch.Stop();
+            label2.Text = "Zeit: " + watch.Elapsed;
+            watch.Reset();
+        }
     }
-}
+  }
+
