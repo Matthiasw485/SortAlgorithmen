@@ -92,11 +92,11 @@ namespace BubbleSort
 
         private void button3_Click(object sender, EventArgs e)
         {
-            watch.Start();
             listBox1.DataSource = null;
+            watch.Start();
             list.Sort();
-            listBox1.DataSource = list;
             watch.Stop();
+            listBox1.DataSource = list;
             label2.Text = "Zeit: " + watch.Elapsed;
             watch.Reset();
         }
