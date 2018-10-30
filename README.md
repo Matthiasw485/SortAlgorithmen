@@ -1,3 +1,3 @@
 # SortAlgorithmen
-## Beschreibung
-In dieser Repository befinden sich Sortieralgorithmen in C# für ein Schulprojekt. 
+## Description
+In this repository there are sorting algorithms for a school project.
